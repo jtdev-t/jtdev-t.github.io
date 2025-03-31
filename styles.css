@@ -1,0 +1,214 @@
+html {
+    background: #222;
+}
+
+.borel-regular {
+    font-family: "Borel", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.meow-script-regular {
+    font-family: "Meow Script", cursive;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.delius-swash-caps-regular {
+    font-family: "Delius Swash Caps", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+body {
+    text-align: center;
+    margin: 20px;
+    background: #222;
+}
+
+.particletext.hearts>.particle {
+    opacity: 0;
+    position: absolute;
+    background-color: #cc2a5d;
+    -webkit-animation: hearts 3s ease-in infinite;
+    animation: hearts 3s ease-in infinite;
+}
+
+.particletext.hearts>.particle::before,
+.particletext.hearts>.particle::after {
+    position: absolute;
+    content: "";
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #cc2a5d;
+}
+
+.particletext.hearts>.particle::before {
+    transform: translateX(-50%);
+}
+
+.particletext.hearts>.particle::after {
+    transform: translateY(-50%);
+}
+
+@-webkit-keyframes hearts{
+    0%{
+        opacity: 0;
+        transform: translate(0, 0%) rotate(45deg);
+    }
+    20%{
+        opacity: 0.8;
+        transform: translate(0, -20%) rotate(45deg);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(0, -1000%) rotate(45deg);
+    }
+}
+
+@keyframes hearts{
+    0%{
+        opacity: 0;
+        transform: translate(0, 0%) rotate(45deg);
+    }
+    20%{
+        opacity: 0.8;
+        transform: translate(0, -20%) rotate(45deg);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(0, -1000%) rotate(45deg);
+    }
+}
+
+.carousel {
+    width: 12%;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.carousel #img-carousel {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10%;
+}
+
+.carousel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px);
+    z-index: -1;
+    border-radius: 15px;
+}
+
+.text-container {
+    margin: 20px 0;
+    color: #ffff;
+}
+
+.text-container h1 {
+    font-size: 40pt;
+}
+
+.text-container h2 {
+    font-size: 28pt;
+}
+
+hr {
+    margin: 20px 0;
+    color: #ffff;
+}
+
+p {
+    color: #ffff;
+    width: 50%;
+    text-align: center;
+    display: block;
+    font-size: 20pt;
+}
+
+#center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-dots li button {
+    display: none;
+    cursor: auto;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Para telas pequenas, como celulares */
+@media (max-width: 600px) {
+    .carousel {
+        width: 80%;
+    }
+
+    .text-container h1 {
+        font-size: 24pt;
+    }
+
+    .text-container h2 {
+        font-size: 18pt;
+    }
+
+    p {
+        width: 80%;
+    }
+
+    .carousel::before {
+        filter: blur(10px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .carousel {
+        width: 50%;
+    }
+
+    .text-container h1 {
+        font-size: 32pt;
+    }
+
+    .text-container h2 {
+        font-size: 24pt;
+    }
+
+    p {
+        width: 70%;
+    }
+}
+
+/* Para telas grandes (desktops) */
+@media (min-width: 1025px) {
+    .carousel {
+        width: 12%;
+    }
+
+    .text-container h1 {
+        font-size: 40pt;
+    }
+
+    .text-container h2 {
+        font-size: 28pt;
+    }
+
+    p {
+        width: 50%;
+    }
+}
